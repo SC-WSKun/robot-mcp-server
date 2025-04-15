@@ -1,2 +1,3 @@
 // Export all services
-export * from './greeting-service.js';
+export * from './foxglove.service.js'
+export * from './robot.service.js'

@@ -1,5 +1,4 @@
 import { FastMCP } from "fastmcp";
-import { z } from "zod";
 
 /**
  * Register all prompts with the MCP server
@@ -18,7 +17,7 @@ export function registerPrompts(server: FastMCP) {
       },
     ],
     load: async ({ name }) => {
-      return `Hello, ${name}! How can I help you today?`;
+      return `你好, ${name}! 有什么我能帮你的吗?`;
     }
   });
 }

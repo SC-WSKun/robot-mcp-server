@@ -1,5 +1,4 @@
 import { FastMCP } from "fastmcp";
-import * as services from "./services/index.js";
 
 /**
  * Register all resources with the MCP server
@@ -24,4 +23,4 @@ export function registerResources(server: FastMCP) {
       };
     }
   });
-} 
+}

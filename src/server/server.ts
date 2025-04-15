@@ -8,19 +8,20 @@ async function startServer() {
   try {
     // Create a new FastMCP server instance
     const server = new FastMCP({
-      name: "MCP Server",
+      name: "Robot Mcp Server",
       version: "1.0.0"
     });
 
     // Register all resources, tools, and prompts
-    registerResources(server);
+    // todo: 机器人api列表？
+    // registerResources(server);
     registerTools(server);
     registerPrompts(server);
-    
+
     // Log server information
-    console.error(`MCP Server initialized`);
-    console.error("Server is ready to handle requests");
-    
+    console.info(`MCP Server initialized`);
+    console.info("Server is ready to handle requests");
+
     return server;
   } catch (error) {
     console.error("Failed to initialize server:", error);
@@ -29,4 +30,4 @@ async function startServer() {
 }
 
 // Export the server creation function
-export default startServer; 
+export default startServer;
