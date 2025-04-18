@@ -3,7 +3,7 @@
 this project was created by [@mcpdotdirect/template-mcp-server]() —— A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP
 
 this is a mcp server for controlling my robot, including:
-- [ ] moving action
+- [x] moving action
 - [ ] navigation
 - wait for adding...
 
