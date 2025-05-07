@@ -23,7 +23,7 @@ export class FoxgloveService {
   msgEncoding: string = 'cdr'
   callServiceId: number = 0 // id of called service
   private constructor() {
-    const ws_url = 'ws://10.0.1.118:8765'
+    const ws_url = 'ws://10.3.51.198:8765'
     this.initClient(ws_url)
   }
 
