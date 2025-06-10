@@ -106099,6 +106099,7 @@ var require_websocket2 = __commonJS((exports, module) => {
 
 // ../../../node_modules/ws/lib/stream.js
 var require_stream = __commonJS((exports, module) => {
+  var WebSocket = require_websocket2();
   var { Duplex } = __require("stream");
   function emitClose(stream2) {
     stream2.emit("close");
@@ -109789,6 +109790,7 @@ var import_rosmsg2_serialization = __toESM(require_dist3(), 1);
 var import_lodash = __toESM(require_lodash(), 1);
 var _ = require_lodash();
 var WebSocket = require_ws();
+var ROBOT_IP = "127.0.0.1";
 
 class FoxgloveService {
   static instance = new FoxgloveService;
@@ -109802,7 +109804,7 @@ class FoxgloveService {
   msgEncoding = "cdr";
   callServiceId = 0;
   constructor() {
-    const ws_url = "ws://10.3.51.198:8765";
+    const ws_url = `ws://${ROBOT_IP}:8765`;
     this.initClient(ws_url);
   }
   static getInstance() {

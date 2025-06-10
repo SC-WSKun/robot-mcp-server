@@ -11,6 +11,8 @@ import { find } from 'lodash'
 const _ = require('lodash')
 const WebSocket = require('ws')
 
+const ROBOT_IP = '127.0.0.1'
+
 export class FoxgloveService {
   private static instance: FoxgloveService = new FoxgloveService()
   private connecting: boolean = false
@@ -23,7 +25,7 @@ export class FoxgloveService {
   msgEncoding: string = 'cdr'
   callServiceId: number = 0 // id of called service
   private constructor() {
-    const ws_url = 'ws://10.3.51.198:8765'
+    const ws_url = `ws://${ROBOT_IP}:8765`
     this.initClient(ws_url)
   }
 
