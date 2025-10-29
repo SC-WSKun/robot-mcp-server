@@ -27,7 +27,6 @@
   "dependencies": {
     "@foxglove/rosmsg": "^5.0.4",
     "@foxglove/rosmsg2-serialization": "^3.0.2",
-    "@foxglove/schemas": "^1.8.0",
     "@foxglove/ws-protocol": "^0.8.0",
     "cors": "^2.8.5",
     "fastmcp": "^1.21.0",
