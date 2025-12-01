@@ -32,7 +32,7 @@ export function registerTools(server: FastMCP) {
     description: 'get locations which robot can reach for navigation',
     parameters: z.object({}),
     execute: async () => {
-      const res = await services.BaseService.getLocationNames()
+      const res = await services.NavigationClass.getLocationNames()
       return JSON.stringify(res)
     },
   })
@@ -45,10 +45,38 @@ export function registerTools(server: FastMCP) {
       locationName: z.string().describe('location name'),
     }),
     execute: async param => {
-      const res = await services.BaseService.navigateToLocation(
+      const res = await services.NavigationClass.navigateToLocation(
         param.locationName,
       )
       return JSON.stringify(res)
     },
+  })
+
+  // Get Routes Robot Can Use To Patrol Tool
+  server.addTool({
+    name: 'robot-get-patrol-routes',
+    description: 'get routes which robot can use to patrol',
+    parameters: z.object({}),
+    execute: async () => {
+      const res = await services.PatrolService.getPatrolRoutes()
+      return JSON.stringify(res)
+    },
+  })
+
+  // Robot Patrol Tool
+  server.addTool({
+    name: 'robot-patrol',
+    description: 'make robot patrol',
+    parameters: z.object({
+      taskName: z.string().describe('route name'),
+      loopCount: z.number().describe('loop count'),
+    }),
+    execute: async param => {
+      const res = await services.PatrolService.startPatrol({
+        task_name: param.taskName,
+        loop_count: param.loopCount,
+      })
+      return JSON.stringify(res)
+    }
   })
 }

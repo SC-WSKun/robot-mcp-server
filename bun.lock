@@ -11,6 +11,7 @@
         "cors": "^2.8.5",
         "fastmcp": "^1.21.0",
         "lodash": "^4.17.21",
+        "ws": "^8.18.3",
         "zod": "^3.24.2",
       },
       "devDependencies": {
@@ -318,6 +319,8 @@
     "wrap-ansi": ["wrap-ansi@7.0.0", "https://registry.npmmirror.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz", { "dependencies": { "ansi-styles": "^4.0.0", "string-width": "^4.1.0", "strip-ansi": "^6.0.0" } }, "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q=="],
 
     "wrappy": ["wrappy@1.0.2", "https://registry.npmmirror.com/wrappy/-/wrappy-1.0.2.tgz", {}, "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="],
+
+    "ws": ["ws@8.18.3", "https://registry.npmmirror.com/ws/-/ws-8.18.3.tgz", { "peerDependencies": { "bufferutil": "^4.0.1", "utf-8-validate": ">=5.0.2" }, "optionalPeers": ["bufferutil", "utf-8-validate"] }, "sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg=="],
 
     "xsschema": ["xsschema@0.2.0-beta.2", "https://registry.npmmirror.com/xsschema/-/xsschema-0.2.0-beta.2.tgz", { "peerDependencies": { "@valibot/to-json-schema": "^1.0.0", "arktype": "^2.1.13", "effect": "^3.14.2", "zod-to-json-schema": "^3.24.5" }, "optionalPeers": ["arktype"] }, "sha512-yaU1SLQVQNboZHHK7iXpCoHzF+sbWvkygAKG6qMKvnpbNdm0SMWAIIj1uasDpCQ21HspPTdEYGg0c0qZYXVQFg=="],
 

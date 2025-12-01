@@ -4,6 +4,7 @@ import {
   FoxgloveClient,
   type Service,
   type ServerInfo,
+  MessageData,
 } from '@foxglove/ws-protocol'
 import { parse as parseMessageDefinition } from '@foxglove/rosmsg'
 import { MessageReader, MessageWriter } from '@foxglove/rosmsg2-serialization'
@@ -87,7 +88,7 @@ export class FoxgloveService {
       this.services.push(...services)
     })
 
-    this.client.on('message', ({ subscriptionId, timestamp, data }) => {
+    this.client.on('message', ({ subscriptionId, timestamp, data }:MessageData) => {
       if (this.callbacks[subscriptionId]) {
         this.callbacks[subscriptionId](timestamp, data)
       } else {
@@ -179,7 +180,7 @@ export class FoxgloveService {
     }
   }
 
-  addHandler(topic: string, callback: (...args: any) => void) {
+  addHandler(topic: string, callback: (timestamp: bigint, data: any) => void) {
     if (!this.client) {
       return Promise.reject('foxglove client is not initialized')
     }
@@ -266,5 +267,19 @@ export class FoxgloveService {
         this.initClient(url)
       }
     }, 10000)
+  }
+
+  /**
+   * check channel status
+   * if channel exist return channel id otherwise return -1
+   * @topic channel name
+   * @return channel id | -1
+   */
+  checkChannelStatus(topic: string) { 
+    if(this.channels.has(topic)) {
+      return this.channels.get(topic)!.id
+    }else{
+      return -1
+    }
   }
 }
