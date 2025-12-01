@@ -18,7 +18,7 @@ export function registerTools(server: FastMCP) {
       angular: z.number().describe('angular speed'),
     }),
     execute: async param => {
-      const res = await services.RobotService.moving(
+      const res = await services.BaseService.moving(
         param.linear,
         param.angular,
       )
@@ -32,7 +32,7 @@ export function registerTools(server: FastMCP) {
     description: 'get locations which robot can reach for navigation',
     parameters: z.object({}),
     execute: async () => {
-      const res = await services.RobotService.getLocationNames()
+      const res = await services.BaseService.getLocationNames()
       return JSON.stringify(res)
     },
   })
@@ -45,7 +45,7 @@ export function registerTools(server: FastMCP) {
       locationName: z.string().describe('location name'),
     }),
     execute: async param => {
-      const res = await services.RobotService.navigateToLocation(
+      const res = await services.BaseService.navigateToLocation(
         param.locationName,
       )
       return JSON.stringify(res)
